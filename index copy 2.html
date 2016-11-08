@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="Dahsboard">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no">
+    <title>Blasting Off With Bootstrap</title>
+    <link href='css/bootstrap.min.css' rel='stylesheet'>
+    <link href='css/main.css' rel='stylesheet'>
+    <link href='../node_modules/angularjs-datepicker/src/css/angular-datepicker.css' rel='stylesheet'>
+
+</head>
+<body ng-controller="DashboardController as board">
+
+
+//call http://localhost/feedback-server/public/users/<emailid of professional> this will be the url to send
+//create a HTTPGET request by specifning method as GET
+
+
+<div ng-show="page == 1">
+    <div ng-include="'dashboard/page1.html'"></div>
+</div>
+
+
+<div ng-show="page == 2">
+    <div class="col-xs-10 col-xs-offset-1">div 222</div>
+</div>
+
+<div ng-show="page == 3">
+    id = {{current_customer_id}}
+    {{page}}
+    <div ng-include="'dashboard/page3.html'"></div>
+</div>
+
+<div ng-show="page == 4">
+    <div ng-include="'dashboard/page4.html'"></div>
+
+</div>
+<div ng-show="page == 5">
+    <div class="col-xs-10 col-xs-offset-1">div 555</div>
+</div>
+
+<div class = "row" ng-show = "customize == 1">
+
+    <section class="tab">
+
+        <ul class="nav nav-pills col-xs-9 col-xs-offset-3">
+            <li ng-class="{ active: isSet(1) }"><a href
+                                                   ng-click="setNav(1)">????</a></li>
+            <li ng-class="{ active: isSet(3) }"><a href
+                                                   ng-click="setNav(4)">Customize</a></li>
+        </ul>
+    </section>
+</div>
+
+<div class="container">
+
+    <section class="tab">
+        <ul class="nav nav-pills">
+            <li ng-class="{ active: isSet(1) }"><a href
+                                                   ng-click="setNav(1)">Home</a></li>
+            <li ng-class="{ active: isSet(2) }"><a href
+                                                   ng-click="setNav(2)">Analys</a></li>
+            <li ng-class="{ active: isSet(3) }"><a href
+                                                   ng-click="show_customerize(1)">Clien</a></li>
+            <li ng-class="{ active: isSet(4) }"><a href
+                                                   ng-click="setNav(4)">Message</a></li>
+            <li ng-class="{ active: isSet(5) }"><a href
+                                                   ng-click="setNav(5)">Setting</a></li>
+        </ul>
+    </section>
+</div>
+
+
+<script
+        src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+<script src='js/bootstrap.min.js'></script>
+<script type="text/javascript" src='angular.min.js'></script>
+<script type="text/javascript" src='app.js'></script>
+<script type="text/javascript" src='../node_modules/angularjs-datepicker/src/js/angular-datepicker.js'></script>
+
+
+</body>
+</html>
